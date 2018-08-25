@@ -12,9 +12,12 @@
 		5CC28042212F130E00628EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC28040212F130E00628EF8 /* Main.storyboard */; };
 		5CC28044212F131000628EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC28043212F131000628EF8 /* Assets.xcassets */; };
 		5CC28047212F131000628EF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC28045212F131000628EF8 /* LaunchScreen.storyboard */; };
+		F61C9CFEB43052AD88D499E3 /* Pods_YouweiCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280F52AF914D25321091983A /* Pods_YouweiCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07577252C8817896AEF8765C /* Pods-YouweiCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouweiCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YouweiCocoa/Pods-YouweiCocoa.release.xcconfig"; sourceTree = "<group>"; };
+		280F52AF914D25321091983A /* Pods_YouweiCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouweiCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC28039212F130E00628EF8 /* YouweiCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouweiCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC2803C212F130E00628EF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC2803E212F130E00628EF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		5CC28043212F131000628EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC28046212F131000628EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CC28048212F131000628EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A609C3EF325BEA4CC3F3B561 /* Pods-YouweiCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouweiCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YouweiCocoa/Pods-YouweiCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F61C9CFEB43052AD88D499E3 /* Pods_YouweiCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32CEB7F2E1B5D48EE7A7890C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				280F52AF914D25321091983A /* Pods_YouweiCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5CC28030212F130E00628EF8 = {
 			isa = PBXGroup;
 			children = (
 				5CC2803B212F130E00628EF8 /* YouweiCocoa */,
 				5CC2803A212F130E00628EF8 /* Products */,
+				D5ED889DFFA329C1E990A6BA /* Pods */,
+				32CEB7F2E1B5D48EE7A7890C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = YouweiCocoa;
 			sourceTree = "<group>";
 		};
+		D5ED889DFFA329C1E990A6BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A609C3EF325BEA4CC3F3B561 /* Pods-YouweiCocoa.debug.xcconfig */,
+				07577252C8817896AEF8765C /* Pods-YouweiCocoa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CC2804B212F131000628EF8 /* Build configuration list for PBXNativeTarget "YouweiCocoa" */;
 			buildPhases = (
+				9F9386A6AC477F19F4809F49 /* [CP] Check Pods Manifest.lock */,
 				5CC28035212F130E00628EF8 /* Sources */,
 				5CC28036212F130E00628EF8 /* Frameworks */,
 				5CC28037212F130E00628EF8 /* Resources */,
+				3209180426B6F8F28FF8B4BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3209180426B6F8F28FF8B4BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YouweiCocoa/Pods-YouweiCocoa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YouweiCocoa/Pods-YouweiCocoa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F9386A6AC477F19F4809F49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YouweiCocoa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CC28035212F130E00628EF8 /* Sources */ = {
@@ -278,14 +343,12 @@
 		};
 		5CC2804C212F131000628EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A609C3EF325BEA4CC3F3B561 /* Pods-YouweiCocoa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YouweiCocoa/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tim.masterson.tutorials.YouweiCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +358,12 @@
 		};
 		5CC2804D212F131000628EF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07577252C8817896AEF8765C /* Pods-YouweiCocoa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YouweiCocoa/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tim.masterson.tutorials.YouweiCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
