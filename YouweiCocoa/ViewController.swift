@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         
         // Create the server trust policies
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "jsonplaceholder.typicode.com": .disableEvaluation
+            "aggregation-web.sit.va.anthem.com": .disableEvaluation
         ]
         
         // Create custom manager
@@ -33,19 +33,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let headers: HTTPHeaders = [
-            "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
-            "Accept": "application/json"
+            "X-MADT-AppId": "ABCBS",
+            "X-MADT-AppVersion": "8.0.1200",
+            "Content-Type": "application/json"
         ]
         let parameters: Parameters = [
-            "foo": "bar",
-            "baz": ["a", 1],
-            "qux": [
-                "x": 1,
-                "y": 2,
-                "z": 3
-            ]
+            "userName": "SIT5SUB340T91519",
+            "password": "support1",
+            "actualUserName": ""
         ]
-        ViewController.manager.request("https://jsonplaceholder.typicode.com/todos", method: .post, parameters: parameters, headers: headers).responseJSON { response in
+        ViewController.manager.request("https://aggregation-web.sit.va.anthem.com/ma-authentication-app-v6/rest/public/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
             }
