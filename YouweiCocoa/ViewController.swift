@@ -11,22 +11,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBAction func GoNext(_ sender: Any) {
-        print("clicked the button in first screen")
-        performSegue(withIdentifier: "firstSegue", sender: self)
-    }
-    
-    var username:String = ""
-    
-    @IBOutlet weak var usernameLabel:UILabel?
-    
-    
-    
     private static var manager: Alamofire.SessionManager = {
         
         // Create the server trust policies
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "aggregation-web.sit.va.anthem.com": .disableEvaluation
+            "jsonplaceholder.typicode.com": .disableEvaluation
         ]
         
         // Create custom manager
@@ -42,21 +31,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        usernameLabel?.text = username
-        
         // Do any additional setup after loading the view, typically from a nib.
         let headers: HTTPHeaders = [
-            "X-MADT-AppId": "ABCBS",
-            "X-MADT-AppVersion": "8.0.1200",
-            "Content-Type": "application/json"
+            "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
+            "Accept": "application/json"
         ]
         let parameters: Parameters = [
-            "userName": "SIT5SUB340T91519",
-            "password": "support1",
-            "actualUserName": ""
+            "foo": "bar",
+            "baz": ["a", 1],
+            "qux": [
+                "x": 1,
+                "y": 2,
+                "z": 3
+            ]
         ]
-        ViewController.manager.request("https://aggregation-web.sit.va.anthem.com/ma-authentication-app-v6/rest/public/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        ViewController.manager.request("https://jsonplaceholder.typicode.com/todos", method: .post, parameters: parameters, headers: headers).responseJSON { response in
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
             }
