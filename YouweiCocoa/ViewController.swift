@@ -11,6 +11,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var firstName:String = ""
+    
+    @IBOutlet weak var firstNameLabel:UILabel?
+    
+    @IBOutlet var usernameField: UITextField!
+    
     private static var manager: Alamofire.SessionManager = {
         
         // Create the server trust policies
@@ -38,7 +44,8 @@ class ViewController: UIViewController {
             "Content-Type": "application/json"
         ]
         let parameters: Parameters = [
-            "userName": "SIT5SUB340T91519",
+//            "userName": "SIT5SUB340T91519",
+            "userName": usernameField.text ?? "SIT5SUB340T91519",
             "password": "support1",
             "actualUserName": ""
         ]
@@ -47,6 +54,8 @@ class ViewController: UIViewController {
                 print("JSON: \(json)") // serialized json response
             }
         }
+        
+        firstNameLabel?.text = firstName
     }
 
     override func didReceiveMemoryWarning() {
