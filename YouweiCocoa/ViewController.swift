@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var usernameField: UITextField!
     
+    @IBOutlet var passwordField: UITextField!
+    
     private static var manager: Alamofire.SessionManager = {
         
         // Create the server trust policies
@@ -52,10 +54,11 @@ class ViewController: UIViewController {
             "Content-Type": "application/json"
         ]
         let parameters: Parameters = [
-            //            "userName": "SIT5SUB340T91519",
+            //            "userName": "SIT5SUB277T91306",
             //            "userName": "SIT5SUB500T91520",
             "userName": usernameField.text ?? " ",
-            "password": "support1",
+//            "password": "support1",
+            "password": passwordField.text ?? " ",
             "actualUserName": ""
         ]
         ViewController.manager.request("https://aggregation-web.sit.va.anthem.com/ma-authentication-app-v6/rest/public/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
