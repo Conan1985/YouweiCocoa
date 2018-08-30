@@ -38,14 +38,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        firstNameLabel?.text = firstName
+        
+    }
+    
+    @IBAction func getFirstName() {
+        
         let headers: HTTPHeaders = [
             "X-MADT-AppId": "ABCBS",
             "X-MADT-AppVersion": "8.0.1200",
             "Content-Type": "application/json"
         ]
         let parameters: Parameters = [
-//            "userName": "SIT5SUB340T91519",
-            "userName": usernameField.text ?? "SIT5SUB340T91519",
+            //            "userName": "SIT5SUB340T91519",
+            "userName": usernameField.text ?? " ",
             "password": "support1",
             "actualUserName": ""
         ]
@@ -56,6 +64,7 @@ class ViewController: UIViewController {
         }
         
         firstNameLabel?.text = firstName
+
     }
 
     override func didReceiveMemoryWarning() {
