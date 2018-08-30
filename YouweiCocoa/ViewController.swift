@@ -53,17 +53,17 @@ class ViewController: UIViewController {
         ]
         let parameters: Parameters = [
             //            "userName": "SIT5SUB340T91519",
+            //            "userName": "SIT5SUB500T91520",
             "userName": usernameField.text ?? " ",
             "password": "support1",
             "actualUserName": ""
         ]
         ViewController.manager.request("https://aggregation-web.sit.va.anthem.com/ma-authentication-app-v6/rest/public/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
+                if let json = response.result.value as? [String: Any] {
+                    print("JSON: \(json)") // serialized json response
+                    self.firstNameLabel?.text = json["firstName"] as? String
+                }
         }
-        
-        firstNameLabel?.text = firstName
 
     }
 
